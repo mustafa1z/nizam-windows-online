@@ -1,0 +1,44 @@
+{
+  "name": "nizam-windows-online",
+  "version": "1.0.0",
+  "description": "نسخة Windows Online لنظام إدارة الأسماء والسجلات",
+  "main": "main.js",
+  "author": "Mustafa Hadi",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.mustafahadi.nizam",
+    "productName": "نظام إدارة الأسماء والسجلات",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "نظام إدارة الأسماء والسجلات"
+    }
+  }
+}
